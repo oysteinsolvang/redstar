@@ -1,1 +1,1 @@
-Data on aircraft activity published by the MoD of the Russian Federation in Krasnaya Zvezda.
+Data on aircraft activity published by the Russian Ministry of Defence newspaper Krasnaya Zvezda [Red Star].
