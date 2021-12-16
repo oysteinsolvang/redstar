@@ -25,7 +25,6 @@ d$UAV[is.na(d$UAV)] <- 0
 d$Other[is.na(d$Other)] <- 0
 d$Total <- d$Aircraft+d$UAV+d$Other
 df$Total <- d$Total
-
 df$R_mean <- zoo::rollmean(df$Total, k = 12, fill=NA)
 
 df <- df %>%
