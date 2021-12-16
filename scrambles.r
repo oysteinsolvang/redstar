@@ -5,9 +5,10 @@ library(zoo) # rolling average
 library(readxl) # read excel file
 
 #df <- read.csv2("rs.csv", header=TRUE,skip=1)
-df <- as.data.frame(read_excel("scrambles.xlsx"))
+#df <- as.data.frame(read_excel("scrambles.xlsx"))
+df <- read.csv2("scrambles.csv")
 colnames(df) <- c("Date","Week","Aircraft","UAV","Other1","Other2","Other3","URL")
-df$Date <- as.Date(as.numeric(df$Date), origin = "1899-12-30")
+#df$Date <- as.Date(as.numeric(df$Date), origin = "1899-12-30")
 df$Aircraft <- as.numeric(df$Aircraft)
 df$UAV <- as.numeric(df$UAV)
 df$Other1 <- as.numeric(df$Other1)
@@ -25,7 +26,7 @@ df$wd <- strtrim(df$Date,4)
 df$Week <- paste(df$wd,df$Week,sep="-")
 df$Other <- ifelse(df$Other == 0, NA, df$Other)
 df$UAV  <- ifelse(df$UAV == 0, NA, df$UAV)
-
+df$Date <- as.Date(df$Date)
 
 d <- df
 d$UAV[is.na(d$UAV)] <- 0
